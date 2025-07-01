@@ -5,7 +5,7 @@ $(document).ready(function () {
         scrollHorizontally: true,
         scrollOverflow: false,
         menu: '#myMenu',
-        anchors: ['HOME', 'PROJECT', 'PROJECT_UIUX', 'PROJECT_WEB', 'PROJECT_POSTER', 'PROJECT_ANI', 'CONTACT'],
+        anchors: ['HOME', 'PROJECT', 'PROJECT_UIUX', 'PROJECT_WEB', 'PROJECT_ANI', 'PROJECT_POSTER', 'CONTACT'],
         navigation: true,
         navigationPosition: 'right',
         slidesNavigation: true,
