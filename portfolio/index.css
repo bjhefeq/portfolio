@@ -222,8 +222,8 @@ header .hd_wrap .logo a h1 span{
   outline: none;
   border: 0;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .home .content{
@@ -635,9 +635,6 @@ position: relative;
 .fp-slidesNav{
   display: none;
 }
-.fp-arrow{
-  padding-left: 5%;
-}
 
 #section2 .project1 {
     background: linear-gradient(to bottom, #8976FF, #AB9EFF);
@@ -908,6 +905,39 @@ position: relative;
 #section3 .project6 .uiux-title {
     left: 0;
     color: #B83A29;
+}
+
+.fp-controlArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: none !important; /* 기본 배경 제거 */
+  border: none;
+}
+
+/* 왼쪽 화살표 */
+.fp-controlArrow.fp-prev {
+  left: 40px;
+}
+
+/* 오른쪽 화살표 */
+.fp-controlArrow.fp-next {
+  right: 40px;
+}
+
+.fa-caret-left,
+.fa-caret-right {
+  font-size: 70px;
+  color: #fafafa;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #a5a5a5;
 }
 
 .project-summary {

@@ -83,4 +83,8 @@ $(document).ready(function () {
         $('.poster-popup').fadeOut();
     });
 
+    $('.fp-controlArrow.fp-prev').html('<i class="fas fa-caret-left"></i>');
+    $('.fp-controlArrow.fp-next').html('<i class="fas fa-caret-right"></i>');
+
+
 });
