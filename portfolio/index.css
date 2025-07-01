@@ -269,94 +269,96 @@ header .hd_wrap .logo a h1 span{
 
 /* about section start */
 
-.section {
-    position: relative;
-    overflow: hidden; /* fullPage.js 섹션에 필요할 수 있습니다. */
-    height: 100vh; /* fullPage.js 섹션은 뷰포트 높이를 차지해야 합니다. */
+#sect1 {
+    overflow: hidden;
+    height: 100vh;
+    align-items: center; /* 섹션 내용 세로 중앙 정렬 */
 }
 
-.about {
-    position: relative;
-    width: 100%; /* .about .inner에 이미 설정되어 있지만 명시적으로 설정 */
-    height: 100%; /* 부모 섹션의 높이를 채우도록 설정 */
-    display: flex;
-    justify-content: center; /* 내용을 가로로 중앙 정렬 */
-    align-items: center; /* 내용을 세로로 중앙 정렬 */
-    padding: 0 20px; /* 좌우 여백 추가 */
+.about.inner {
+    width: 100%;
+    max-width: 1280px; /* 이미지에서 보이는 콘텐츠의 최대 너비로 추정 */
+    padding: 0 40px; /* 좌우 패딩 */
     box-sizing: border-box;
-    z-index: 1; /* 이미지 위에 있도록 설정 */
+    justify-content: center;
+    height: 100%; /* 부모에 맞춰 높이 설정 */
+    z-index: 1; /* 배경 이미지 위에 오도록 설정 */
 }
 
 .about .content {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 75px;
-    flex-wrap: nowrap;
     width: 100%;
-    max-width: 1200px; /* 콘텐츠 최대 너비 설정, 필요에 따라 조정 */
+    padding-top: 80px; /* ABOUT 제목과의 간격 */
     box-sizing: border-box;
-    align-items: flex-start; /* flex-start로 변경하여 상단 정렬 유지 */
 }
 
 .about .me {
-    width: 60%;
-    margin-left: 10px;
+    /* width: 60%; */
+    margin-left: 0;
+    box-sizing: border-box;
 }
 
-.about .me .title p { /* .about .me .title .p는 오타일 가능성이 있어 p로 수정 */
+.about .me .heading {
+  font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.about .me .title p {
     display: block;
+    font-size: 24px;
+    line-height: 1.4;
 }
 
 .about .me .txt-bottom {
     font-family: 'NanumSquareNeo';
     font-size: 16px;
-    color: #545050;
     line-height: 160%;
-    margin-top: 33px;
 }
 
 .about .me .txt-bottom .flex {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start; /* 이미지와 텍스트 박스를 상단 정렬 */
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
+    align-items: flex-start;
+    gap: 43px; /* 이미지와 텍스트 사이 간격 */
 }
 
 .about .me .txt-bottom .flex img {
-    padding-right: 43px;
-    max-width: 250px; /* 이미지 최대 너비 설정, 필요에 따라 조정 */
-    height: auto;
+    width: 180px; 
+    height: 180px; 
+    object-fit: contain; 
+    padding-right: 0; 
 }
 
 .about .me .txt-bottom .flex .txt {
-    flex: 1; /* 남은 공간을 텍스트가 차지하도록 설정 */
-    padding-top: 30px;
+    flex-grow: 1; /* 남은 공간을 텍스트가 차지하도록 설정 */
+}
+
+.about .me .txt-bottom .txt-box1,
+.about .me .txt-bottom .txt-box2,
+.about .me .txt-bottom .txt-box3 {
 }
 
 .about .me .txt-bottom .txt-box2 {
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .about .his {
-    width: 40%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+    width: auto; /* 이미지와 유사하게 너비 조정 */
     padding: 40px;
     border-radius: 20px;
-    background: linear-gradient(145deg, #f5f5f5, #ffffff);
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05), -4px -4px 12px rgba(255, 255, 255, 0.8);
+    background: #f5f5f5; /* 이미지처럼 단색 배경 */
+    box-shadow: none; /* 이미지에 그림자 없음 */
     font-family: 'NanumSquareNeo';
     font-size: 14px;
-    color: #888;
-    box-sizing: border-box;
-    display: flex;
     flex-direction: column;
-    gap: 30px;
-    justify-content: space-between;
-    margin-left: 20px; /* me와 his 사이 간격 추가 */
 }
 
 .about .his:hover {
-    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
+    box-shadow: none; /* 호버 효과 제거 */
+    transform: none; /* 호버 효과 제거 */
 }
 
 .about .his .his-con {
@@ -365,25 +367,29 @@ header .hd_wrap .logo a h1 span{
     gap: 36px;
 }
 
+.his_flex1{
+  display: flex;
+}
+
 .about .his .his-con li {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    gap: 20px;
+    gap: 8px; /* 제목과 내용 간의 간격 줄이기 */
 }
 
 .about .his .his-con li .his-title {
     font-family: 'NanumSquareNeoHeavy';
     font-size: 16px;
-    color: #888;
-    margin-bottom: 4px;
+    /* color: #333; - 원래 값 유지 */
+    margin-bottom: 0px; /* 기존 마진 제거 */
 }
 
 .about .his .his-con li .his-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px; /* 아이템 간의 간격 줄이기 */
     font-size: 14px;
-    color: #888;
+    /* color: #888; - 원래 값 유지 */
 }
 
 .his .his-body .item {
@@ -394,33 +400,37 @@ header .hd_wrap .logo a h1 span{
 
 .his .his-body .date {
     min-width: 80px;
-    font-weight: 500;
-    color: #888;
+    /* font-weight: normal; - 원래 값 유지 */
+    /* color: #888; - 원래 값 유지 */
     font-size: 14px;
 }
 
 .his .his-body .text p {
     margin: 0;
     line-height: 1.5;
-    color: #888;
+    /* color: #888; - 원래 값 유지 */
     font-size: 14px;
 }
 
 .about .his .his-con li .his-body-skill {
     display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
-    gap: 8px 40px;
+    grid-template-columns: repeat(2, 1fr); /* 2열로 고정 */
+    gap: 6px 40px; /* 행 간격과 열 간격 조정 */
     font-size: 14px;
-    color: #888;
+    /* color: #888; - 원래 값 유지 */
 }
 
 .his .his-body-skill .flex {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px 40px;
+    flex-direction: column; /* 스킬 항목을 세로로 정렬 */
+    gap: 6px; /* 스킬 항목 내의 간격 */
     font-size: 14px;
-    color: #888;
-    margin-top: 4px;
+    /* color: #888; - 원래 값 유지 */
+    margin-top: 0; /* 기존 마진 제거 */
+}
+
+.his .his-body-skill .flex span {
+    display: block; /* 각 스킬을 블록 요소로 만들어 줄바꿈 */
 }
 
 .about .his .his-con li:last-child .his-body {
@@ -429,23 +439,22 @@ header .hd_wrap .logo a h1 span{
     gap: 4px;
 }
 
-.image01 {
+
+/* 배경 이미지 배치 */
+#sect1 .about::after {
+    content: '';
     position: absolute;
+    bottom: 0;
     left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* 콘텐츠 뒤에 있도록 z-index 조정 */
-    overflow: hidden;
+    background-image: url('./images/about_bg_01.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    z-index: -1;
+    pointer-events: none;
 }
-
-.image01 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; /* 이미지 하단 여백 제거 */
-}
-
 /* about section end */
 
 /* project section start */
